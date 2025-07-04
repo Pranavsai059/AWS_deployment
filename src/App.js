@@ -1,45 +1,88 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+const students = [
+  {
+    name: "Aarav Sharma",
+    rollNumber: "CS2025-001",
+    marks: [88, 92, 85, 78],
+  },
+  {
+    name: "Isha Verma",
+    rollNumber: "CS2025-002",
+    marks: [75, 81, 79, 84],
+  },
+  {
+    name: "Raj Patel",
+    rollNumber: "CS2025-003",
+    marks: [91, 87, 90, 77],
+  },
+  {
+    name: "Sneha Nair",
+    rollNumber: "CS2025-004",
+    marks: [82, 89, 88, 80],
+  },
+  {
+    name: "Kabir Singh",
+    rollNumber: "CS2025-005",
+    marks: [68, 74, 71, 69],
+  },
+  {
+    name: "Meera Das",
+    rollNumber: "CS2025-006",
+    marks: [94, 90, 93, 86],
+  },
+  {
+    name: "Aditya Joshi",
+    rollNumber: "CS2025-007",
+    marks: [79, 83, 76, 82],
+  },
+  {
+    name: "Priya Reddy",
+    rollNumber: "CS2025-008",
+    marks: [87, 85, 88, 91],
+  },
+  {
+    name: "Vikram Gupta",
+    rollNumber: "CS2025-009",
+    marks: [72, 70, 74, 67],
+  },
+  {
+    name: "Joyfrank Sebastian",
+    rollNumber: "CS2025-010",
+    marks: [100, 100, 100, 100],
+  },
+];
 
 function App() {
-   const students = [
-    { id: 1, name: 'Akhil', age: 20, grade: 'A' },
-    { id: 2, name: 'Sneha', age: 21, grade: 'B' },
-    { id: 3, name: 'Ravi', age: 22, grade: 'C' },
-    { id: 4, name: 'Gayatri', age: 20, grade: 'A' },
-    { id: 5, name: 'Kiran', age: 23, grade: 'B+' },
-    { id: 6, name: 'Divya', age: 21, grade: 'A-' },
-    { id: 7, name: 'Rohit', age: 22, grade: 'C+' },
-    { id: 8, name: 'Pooja', age: 20, grade: 'B' },
-    { id: 9, name: 'Rahul', age: 23, grade: 'A-' },
-    { id: 10, name: 'Akshaya', age: 21, grade: 'A+' },
-  ];
   return (
-    <>
-    <div style={{ padding: '20px' }}>
-      <h2>Student Table</h2>
-      <table border="1" cellPadding="10" style={{ borderCollapse: 'collapse', width: '100%' }}>
+    <div className="App">
+      <table border={10} cellSpacing={5} cellPadding={10}>
         <thead>
-          <tr style={{ backgroundColor: '#f2f2f2' }}>
-            <th>ID</th>
+          <tr>
+            <th>S.no</th>
             <th>Name</th>
-            <th>Age</th>
-            <th>Grade</th>
+            <th>Roll No.</th>
+            <th>CN</th>
+            <th>DBMS</th>
+            <th>Java</th>
+            <th>Aptitude</th>
           </tr>
         </thead>
         <tbody>
-          {students.map((student) => (
-            <tr key={student.id}>
-              <td>{student.id}</td>
+          {students.map((student,idx) => (
+            <tr key={student.rollNumber}>
+              <td>{idx+1}</td>
               <td>{student.name}</td>
-              <td>{student.age}</td>
-              <td>{student.grade}</td>
+              <td>{student.rollNumber}</td>
+              <td>{student.marks[0]}</td>
+              <td>{student.marks[1]}</td>
+              <td>{student.marks[2]}</td>
+              <td>{student.marks[3]}</td>
             </tr>
           ))}
         </tbody>
       </table>
     </div>
-    </>
   );
 }
 
